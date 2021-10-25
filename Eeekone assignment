@@ -1,0 +1,18 @@
+def init (self, members):
+self._myteam = members
+
+def len(self):
+return len(self._myteam)
+
+def contains(self, x):
+return x in self._myteam
+
+def iter(self):
+return iter(self._myteam)
+
+classmates is not a class but an object to hold the reference of teams. teams then implements len method
+
+the difference between interface and implementation:
+an interface is there to specify a specific set of methods that are available to implement while implementation is embedded within an interface as a function. Class implements methods defined in the interface
+
+storage device can be implemented as a method in Class. every storage device has appropriate conditions for functioning/implementation. The difference between interface and Implementation can be seen from having a list of storage devices to chose from that each have their own files and set of information and capability if implementing these methods enclosed. you do not actually see the code that the implementation comes from, thats encapsulation.
