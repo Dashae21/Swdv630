@@ -1,0 +1,110 @@
+# week two assingment submission // late 
+
+CheckingAccount.py
+
+class CheckingAccount:
+    # account initialising with basic details
+    def __init__(self, name, address, accountNumber, balance):
+        self.name = name
+        self.address = address
+        self.accountNumber = accountNumber 
+        # balance is private
+        self._balance = balance
+
+    # for debit
+    def debit(self, amount):
+        # if there is sufficient amount,
+        # then debit
+        if(self._balance >= amount):
+            self._balance -= amount
+        else:
+            # else show error
+            print('BALANCE IS NOT SUFFICIENT!')
+    
+    # for credit
+    def credit(self, amount):
+        self._balance += amount
+
+    # prints the account details
+    def displayDetails(self):
+        print()
+        print('ACCOUNT DETAILS')
+        print("-"*50); # for border
+        print("ACC NUMBER: ", self.accountNumber)
+        print("NAME: ", self.name)
+        print("ADDRESS: ", self.address)
+        print("BALANCE: ", self._balance, "$")
+        print("-"*50); # for border
+        print()
+    
+
+Driver.py
+
+class CheckingAccount:
+    # account initialising with basic details
+    def __init__(self, name, address, accountNumber, balance):
+        self.name = name
+        self.address = address
+        self.accountNumber = accountNumber 
+        # balance is private
+        self._balance = balance
+
+    # for debit
+    def debit(self, amount):
+        # if there is sufficient amount,
+        # then debit
+        if(self._balance >= amount):
+            self._balance -= amount
+        else:
+            # else show error
+            print('Insufficient balance')
+    
+    # for credit
+    def credit(self, amount):
+        self._balance += amount
+
+    # prints the account details
+    def displayDetails(self):
+        print('Account details: ')
+        print("Account Number: ", self.accountNumber)
+        print("Name: ", self.name)
+        print("Address: ", self.address)
+        print("Balance: $", self._balance)
+    
+driver.py
+
+# asking the user for account details
+name = input('Enter account holder name: ')
+address = input('Enter  address: ')
+accNumber = 'AC123009'
+balance = float(input('Enter initial deposit: '))
+
+# creating a new account
+newAccount = CheckingAccount.CheckingAccount(name, address, accNumber, balance)
+
+# for user options
+option = ''
+
+# repeat untill user type 3 for exit
+while option != '3':
+    # display options
+    print()
+    print('Banking Options:')
+    print('1. Deposit')
+    print('2. Withdraw')
+    print('3. Exit')
+    option = input('Enter option: ')
+
+    # if option 1,then credit
+    if option == '1':
+        amount = float(input('Amount: '))
+        newAccount.credit(amount)
+        newAccount.displayDetails()
+        
+    # if option 2,then debit
+    elif option == '2':
+        amount = float(input('Amount: '))
+        newAccount.debit(amount)
+        newAccount.displayDetails()
+
+
