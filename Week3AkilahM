@@ -1,0 +1,42 @@
+Inheritance pt 1
+
+class Housing:
+    def __init__(self, type):
+        self.type = type
+
+class Housing(Apartment):
+    def __init__(self, type, location):
+        Apartment.__init__(type, location)
+        self.location = location
+
+class Housing(House):
+    def __init__(self, type, location):
+        House.__init__(type, location)
+        self.House = house
+
+class Housing(Condo):
+    def __init__(self, type, location):
+        Condo.__init__(type, location)
+        self.Condo = condo
+
+
+Inheritance pt 2
+
+1. What are the parent and child classes here? ans: Spell is the parent class
+
+2. What are the base and sub-classes? ans: Base class - Spell , Subclasses: Accio Cofundo
+
+3. What is the output from this code? Try without running if you can---- ans: Accio
+SummoningCharmAccio No description
+
+4. When study_spell(Confundo()) executes...what get_description method gets called and why? --- 
+ans: an error is raised, cofundo isnt declared so throws system into confusion
+
+5. The statement print Accio() needs to print ‘This charm summons an object to the caster, 
+potentially over a significant distance’)? Write down the code that we need to add and/or change. --
+ans: Accio needs another method to 'announce' itself like a spell being cast. 
+def new(self):
+    print("This is a summons for an object to whom casted it to potentially over great distance")
+
+
+    spell.new()
